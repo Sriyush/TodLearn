@@ -8,8 +8,12 @@ class MathModuleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Learn Maths'),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: Text('Learn Maths',style: TextStyle(color: Color(0xFFF5F5F5)),),
       ),
       body: Container( 
         decoration: const BoxDecoration(
@@ -23,35 +27,62 @@ class MathModuleScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ModuleButton(
-              text: 'Addition',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AdditionScreen()),
-                );
-              }, title: 'Addition',
-            ),
+             MaterialButton(
+                height: 60,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+                color: Colors.black38,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AdditionScreen()),
+                  );
+                },
+                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
+                child: Text('Addition', 
+                style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white
+                )
+                ),
+              ),
             SizedBox(height: 20),
-            ModuleButton(
-              text: 'Subtraction',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SubtractionScreen()),
-                );
-              }, title: 'Subtraction',
-            ),
+           MaterialButton(
+                height: 60,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+                color: Colors.black38,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SubtractionScreen()),
+                  );
+                },
+                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
+                child: Text('Subtraction', 
+                style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white
+                )
+                ),
+              ),
             SizedBox(height: 20),
-            ModuleButton(
-              text: 'Counting',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CountingGameScreen()), // Navigate to CountingGameScreen
-                );
-              }, title: 'Counting',
-            ),
+            MaterialButton(
+                height: 60,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+                color: Colors.black38,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CountingGameScreen()),
+                  );
+                },
+                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
+                child: Text('Count it', 
+                style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white
+                )
+                ),
+              ),
           ],
         ),
       ),),
