@@ -45,7 +45,11 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        // iconTheme: IconThemeData(color: Colors.white),
+        // backgroundColor: Colors.transparent,
+        // elevation: 0.0,
         title: Text('Feedback'),
       ),
       body: Center(

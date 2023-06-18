@@ -1,147 +1,152 @@
+import 'dart:ffi';
+// import 'package:google_fonts/google_fonts.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'babysitauth.dart';
-import 'feedback_screen.dart';
-import 'math_module_screen.dart';
-import 'english_module_screen.dart';
+import 'package:todlearn/models/product.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../widgets/Sorting.dart';
+import '../widgets/category.dart';
+import 'feedback_screen.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex =0;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        
+         iconTheme: IconThemeData(color: Colors.blue),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: const Text('Kids Learning App', style: TextStyle(color: Color(0xFFF5F5F5)),),
-        actions: [
-          // Padding(padding: EdgeInsets.only(right: 10.0),
-          PopupMenuButton<int>(
+        automaticallyImplyLeading: false,
+        leading: IconButton(onPressed: (){}, icon: const Icon(Icons.pets,
+              color: Colors.blue)),
+       actions: <Widget>[
+         PopupMenuButton<int>(
             onSelected: (item) => onSelected(context, item),
             itemBuilder: (context) => [
             PopupMenuItem<int>(value: 0,
             child: Text('Feedback'),)
           ])
-        ],
-      ),
-      // drawer: Drawer(
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: [
-      //       const DrawerHeader(
-      //         decoration: BoxDecoration(
-      //           image: DecorationImage(
-      //       image: AssetImage('assets/mickey.png'),
-      //       // fit: BoxFit.cover,
-      //     ),
-      //         ),
-      //         child: Text(''),
-      //       ),
-      //       ListTile(
-      //         leading: Icon(Icons.home),
-      //         title: const Text('Register For Baby Sitting'),
-      //         // onTap: () {
-      //         //   Navigator.push(context,
-      //         //   MaterialPageRoute(builder: (context)=> BabysitterRegistrationPage()));
-      //         // },
-      //       ),
-      //       ListTile(
-      //         leading: Icon(Icons.home),
-      //         title: const Text('Feedback'),
-      //         onTap: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(builder: (context) => FeedbackScreen()),
-      //           );
-      //           // Navigator.pop(context);
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      body: Container(
-        decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.only(bottomRight: Radius.circular(30)),
-          image: DecorationImage(
-            image: AssetImage('assets/register.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-//               Expanded(flex: 3,
-//               child: Container(
-//               // color: Colors.wh
-//               width: double.infinity,
-//               decoration: BoxDecoration(color: Colors.purpleAccent,
-//               borderRadius: BorderRadius.only(bottomRight: Radius.circular(50)),),
-//               child: Column(children: [
-//                 Expanded(child: Image.asset('assets/.png'))
 
-//               ]),
-// )
-//               ),
-//               Expanded(flex: 2,
-//                 child: Container(
-//                 // color: Colors.white,
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
-//                 ),
-//                 ))
-              // Spacer(),
-              MaterialButton(
-                height: 60,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                color: Colors.black38,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MathModuleScreen()),
-                  );
-                },
-                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Learn Maths', 
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
+       ],
+      ),
+      bottomNavigationBar: BottomNavyBar(
+   selectedIndex: _selectedIndex,
+   showElevation: true, // use this to remove appBar's elevation
+   onItemSelected: (index) => setState(() {
+              _selectedIndex = index;
+              
+    }),
+   items: [
+     BottomNavyBarItem(
+       icon: Icon(Icons.apps),
+       title: Text('Home'),
+       activeColor: Colors.red,
+     ),
+     BottomNavyBarItem(
+         icon: Icon(Icons.favorite),
+         title: Text('Users'),
+         activeColor: Colors.purpleAccent
+     ),
+     BottomNavyBarItem(
+         icon: Icon(Icons.people),
+         title: Text('Messages'),
+         activeColor: Colors.pink
+     ),
+     BottomNavyBarItem(
+         icon: Icon(Icons.person),
+         title: Text('Settings'),
+         activeColor: Colors.blue
+     ),
+   ],
+),
+      body:SafeArea(
+        // child: SingleChildScrollView(
+        child: ListView(
+        children: [
+          // Custombar(),
+          SizedBox(height: 20,),
+          Padding(padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(children: [
+          Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text('Welcome!',style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold,fontStyle: FontStyle.italic),
+                  ),
+                  SizedBox(height: 10,),
+                  Text('Lets try to learn intresting things\nin intresting way.',
+                  // textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black38,
+                    wordSpacing: 2.5,
+                    height: 1.5,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),)
+                ],
               ),
-              SizedBox(height: 50),
-              MaterialButton(
-                height: 60,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                color: Colors.black38,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => EnglishModuleScreen()),
-                  );
-                },
-                // style: ElevatedButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Learn English',
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
-              ),
+              Spacer(),
+              Column(
+               children: [
+                // Container(
+                //   height: 90,
+                //   width: 90,
+                //   decoration: BoxDecoration(color: Colors.blue,border: Border.all(width:5), borderRadius: BorderRadius.circular(30) ),
+                  CircleAvatar(
+                          backgroundImage: AssetImage('assets/Todlearn.png'),
+                          radius: 50,
+                  ),
+                // )
+               ],
+              )
             ],
           ),
-        ),
+          SizedBox( height: 20,),
+
+          // Sorting(),
+          SizedBox(height: 20,),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            const Text('Lets learn',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+            InkWell(
+              onTap: (){},
+              child: Text('See all', style: TextStyle(fontSize: 16, color:Colors.pinkAccent)),
+            ),
+           
+          ],),
+          SizedBox(height: 20,),
+           categorylist(),
+          ],
+          ),
+          )
+        ],
+      ),
+      // ),
       ),
     );
   }
-  
+
   onSelected(BuildContext context, int item) {
-    switch(item){
+     switch(item){
       case 0:
       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> FeedbackScreen()),);
     }
+
   }
 }
 
-//Some new
+
+
+
+

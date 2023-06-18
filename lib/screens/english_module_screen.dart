@@ -7,8 +7,12 @@ class EnglishModuleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Learn English'),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        title: Text('Learn English',style: TextStyle(color: Color(0xFFF5F5F5)),),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -21,24 +25,38 @@ class EnglishModuleScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            MaterialButton(
+              height: 50,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              color: Colors.black38,
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AlphabetScreen()),
                 );
               },
-              child: Text('Alphabets'),
+              child: Text('Alphabets',
+              style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white)
+              ),
             ),
             SizedBox(height: 20),
-            ElevatedButton(
+            MaterialButton(
+              height:50,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              color: Colors.black38,
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => WordsScreen()),
                 );
               },
-              child: Text('Unjumble the words'),
+              child: Text('Unjumble the words',
+              style: TextStyle(fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white)
+              ),
             ),
           ],
         ),
