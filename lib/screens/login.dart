@@ -1,144 +1,85 @@
+import 'dart:async';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:todlearn/screens/home_screen.dart';
 
-class MyLogin extends StatefulWidget {
-  const MyLogin({Key? key}) : super(key: key);
+class MyLogin extends StatelessWidget {
+  const MyLogin({super.key});
 
-  @override
-  _MyLoginState createState() => _MyLoginState();
-}
-
-class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: const AssetImage('assets/mickss.png'), fit: BoxFit.cover),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    Timer(
+            Duration(seconds: 5),
+                () =>
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => HomeScreen())));
+    return Scaffold(
         body: Stack(
-          children: [
+      children:[ 
+        
+        Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Stack(children: [
+          Stack(children: [
             Container(
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 100, top: 130),
-            ),
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 35, right: 35),
-                      child: Column(
-                        children: [
-                          // TextField(
-                          //   style: TextStyle(color: Colors.black),
-                          //   decoration: InputDecoration(
-                          //       fillColor: Colors.grey.shade100,
-                          //       filled: true,
-                          //       hintText: "Email",
-                          //       border: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(10),
-                          //       )),
-                          // ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          // TextField(
-                          //   style: TextStyle(),
-                          //   obscureText: true,
-                          //   decoration: InputDecoration(
-                          //       fillColor: Colors.grey.shade100,
-                          //       filled: true,
-                          //       hintText: "Password",
-                          //       border: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(10),
-                          //       )),
-                          // ),
-                          SizedBox(
-                            height: 70,
-                          ),
-                          // Spacer(flex: 3),
-                          Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              // Text(
-                              //   'Sign in',
-                              //   style: TextStyle(
-                              //       fontSize: 27, fontWeight: FontWeight.w700),
-                              // ),
-                              Padding(
-                                padding: const EdgeInsets.all(100.0),
-                              
-                              child: Center(
-                              child: MaterialButton(
-                               height: 60,
-                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                               color: Colors.black45,
-                               onPressed: () {
-                              Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => HomeScreen()),
-                              );
-                              },
-                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Get Started', 
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
-              ),),)
-                            ],
-                          ),),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //   children: [
-                          //     TextButton(
-                          //       onPressed: () {
-                          //         Navigator.pushNamed(context, 'register');
-                          //       },
-                          //       child: Text(
-                          //         'Sign Up',
-                          //         textAlign: TextAlign.left,
-                          //         style: TextStyle(
-                          //             decoration: TextDecoration.underline,
-                          //             color: Color(0xff4c505b),
-                          //             fontSize: 18),
-                          //       ),
-                          //       style: ButtonStyle(),
-                          //     ),
-                          //     TextButton(
-                          //         onPressed: () {},
-                          //         child: Text(
-                          //           'Forgot Password',
-                          //           style: TextStyle(
-                          //             decoration: TextDecoration.underline,
-                          //             color: Color(0xff4c505b),
-                          //             fontSize: 18,
-                          //           ),
-                          //         )),
-                          //   ],
-                          // )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height/1.7,
+              decoration: BoxDecoration(
+                color: Colors.white,
               ),
             ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height/1.7,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 148, 196, 243),
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(100),bottomLeft: Radius.circular(100),)
+              ),
+              child: Center(child: Image.asset(
+                'assets/Todlearnt.png',
+                // height: 1600,
+                // width: 1000,
+                scale: 0.8,
+              )),
+            )
           ],
-        ),
+            
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height/2.6,
+              decoration: BoxDecoration(color: Colors.white),
+              child: Column(children: [
+                Text('Welcome to Todlearn!!',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  wordSpacing: 2,
+                ),),
+                SizedBox(height: 15,),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text('Learn with Fun :)', style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black.withOpacity(1),
+                ),
+                ),),
+                SizedBox(height: 30,),
+
+                Padding(padding: EdgeInsets.symmetric(horizontal: 40),
+                child: LoadingAnimationWidget.staggeredDotsWave(color: Colors.blue.shade100, size: 50),
+                )
+              ]
+              ),
+            ),
+          ),
+        ]),
+      ),],
       ),
+      // ),
     );
   }
 }

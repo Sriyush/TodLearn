@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:todlearn/models/product.dart';
-
+import 'package:shimmer/shimmer.dart';
 import '../widgets/Sorting.dart';
 import '../widgets/category.dart';
 import 'feedback_screen.dart';
@@ -86,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 10,),
                   Text('Lets try to learn intresting things\nin intresting way.',
+                  
                   // textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black38,

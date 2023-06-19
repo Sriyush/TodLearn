@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todlearn/screens/counting_game_screen.dart';
 
 import 'addition_screen.dart';
 import 'subtraction_screen.dart';
@@ -65,24 +64,24 @@ class MathModuleScreen extends StatelessWidget {
                 ),
               ),
             SizedBox(height: 20),
-            MaterialButton(
-                height: 60,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                color: Colors.black38,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CountingGameScreen()),
-                  );
-                },
-                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Count it', 
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
-              ),
+            // MaterialButton(
+            //     height: 60,
+            //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+            //     color: Colors.black38,
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) => CountingGameScreen()),
+            //       );
+            //     },
+            //       // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
+            //     child: Text('Count it', 
+            //     style: TextStyle(fontWeight: FontWeight.bold,
+            //     fontSize: 18,
+            //     color: Colors.white
+            //     )
+            //     ),
+            //   ),
           ],
         ),
       ),),
