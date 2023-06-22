@@ -9,82 +9,24 @@ class MathModuleScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: Colors.blue),
+        backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Text('Learn Maths',style: TextStyle(color: Color(0xFFF5F5F5)),),
+        centerTitle: true,
+        title: Text('Fun With Numbers',style: TextStyle(color: Colors.blue)),
       ),
-      body: Container( 
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
-          image: DecorationImage(
-            image: AssetImage('assets/register.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-             MaterialButton(
-                height: 60,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                color: Colors.black38,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AdditionScreen()),
-                  );
-                },
-                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Addition', 
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
-              ),
-            SizedBox(height: 20),
-           MaterialButton(
-                height: 60,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                color: Colors.black38,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SubtractionScreen()),
-                  );
-                },
-                  // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-                child: Text('Subtraction', 
-                style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.white
-                )
-                ),
-              ),
-            SizedBox(height: 20),
-            // MaterialButton(
-            //     height: 60,
-            //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-            //     color: Colors.black38,
-            //     onPressed: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(builder: (context) => CountingGameScreen()),
-            //       );
-            //     },
-            //       // style: MaterialButton.styleFrom(primary: Colors.limeAccent,),
-            //     child: Text('Count it', 
-            //     style: TextStyle(fontWeight: FontWeight.bold,
-            //     fontSize: 18,
-            //     color: Colors.white
-            //     )
-            //     ),
-            //   ),
-          ],
-        ),
-      ),),
+      body: Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+      child: ListView(children: [
+        Container(
+          padding: EdgeInsets.all(5),
+          width: MediaQuery.of(context).size.width,
+          height: 250,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+          color: Colors.blue.shade100,
+          image: DecorationImage(image: AssetImage('assets/monsadd.png', ))),
+        )
+      ],),)
     );
   }
 }

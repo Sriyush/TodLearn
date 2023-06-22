@@ -9,7 +9,7 @@ class MyLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(
-            Duration(seconds: 5),
+            Duration(seconds: 3),
                 () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => HomeScreen())));
