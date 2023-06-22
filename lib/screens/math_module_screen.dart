@@ -22,9 +22,106 @@ class MathModuleScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 250,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-          color: Colors.blue.shade100,
-          image: DecorationImage(image: AssetImage('assets/monsadd.png', ))),
+            borderRadius: BorderRadius.circular(50),
+          color: Color(0xFFF5F3FF),
+          image: DecorationImage(image: AssetImage('assets/monsadd.png', ),
+          fit: BoxFit.cover,
+          )),
+        ),
+        SizedBox(height: 15,),
+        Text('Fun Maths Games', style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),),
+        SizedBox(height: 10,),
+        Text('2 Games', style: TextStyle( fontSize: 14,
+        fontWeight: FontWeight.w400)),
+        SizedBox(height: 20,),
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          decoration: BoxDecoration(
+            color: Color(0xFFF5F3FF),
+            borderRadius: BorderRadius.circular(10),
+
+          ),
+          child :Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Material(
+                    color: Color(0xFFff6374),
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: (){
+                         Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AdditionScreen(),
+                                ),
+                              );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 50),
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Addition',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                  Material(
+                    color: Color(0xFFff6374),
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SubtractionScreen(),
+                                ),
+                              );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 50),
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Subtraction',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Icon(
+                              Icons.remove,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]
+)
+
+
         )
       ],),)
     );

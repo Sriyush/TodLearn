@@ -16,14 +16,14 @@ import 'package:flutter/material.dart';
     id:1,
     title: "Fun with Numbers",
     image: "assets/addandsub.png",
-    color: Color(0xff71b8ff),
+    color: Color(0xFFff6374),
     games: 2,
   ),
   Product(
     id:2,
     title: "English",
     image: "assets/english.jpeg",
-    color: Color(0xFFff6374),
+    color: Color(0xff71b8ff),
     games: 2,
   ),
   Product(
