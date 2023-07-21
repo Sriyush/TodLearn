@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "276171530999",
-    "project_id": "todlearn-2ac90",
-    "storage_bucket": "todlearn-2ac90.appspot.com"
+    "project_number": "81443923710",
+    "project_id": "todlearn-new",
+    "storage_bucket": "todlearn-new.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:276171530999:android:cf6ea753d95e0d4b1329f2",
+        "mobilesdk_app_id": "1:81443923710:android:9a01a6f4c13a756aa1a7af",
         "android_client_info": {
           "package_name": "com.example.todlearn"
         }
       },
       "oauth_client": [
         {
-          "client_id": "276171530999-tflio31i3d9nggfv5cgikv099vfj27b5.apps.googleusercontent.com",
+          "client_id": "81443923710-epu3etb58dp6g17spfn6r6umo0h1fe63.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBmj5XlXVTPFaBENOzP71A5gMUbsngs1ME"
+          "current_key": "AIzaSyCtt3CM6XGTWIkJhbQT7dEctX4luh81Ox0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "276171530999-tflio31i3d9nggfv5cgikv099vfj27b5.apps.googleusercontent.com",
+              "client_id": "81443923710-epu3etb58dp6g17spfn6r6umo0h1fe63.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

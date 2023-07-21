@@ -57,7 +57,11 @@ void _checkAnswer() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Subtraction Game'),
+        iconTheme: IconThemeData(color: Colors.blue),
+        centerTitle: true,
+        title: Text('Subtraction Game',style: TextStyle(color: Colors.blue)),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
       ),
       body: Center(
         child: Column(

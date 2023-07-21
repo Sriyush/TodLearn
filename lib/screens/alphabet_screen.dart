@@ -55,7 +55,11 @@ class _AlphabetGuessGameState extends State<AlphabetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Alphabet Guess Game'),
+        iconTheme: IconThemeData(color: Colors.blue),
+        centerTitle: true,
+        title: Text('Alphabet Guess Game',style: TextStyle(color: Colors.blue)),
+         backgroundColor: Colors.white,
+        elevation: 0.0,
       ),
       body: SingleChildScrollView(
         child: Center(

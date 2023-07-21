@@ -66,7 +66,7 @@ class EnglishModuleScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Addition',
+                              'Guess the First Letter',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -74,7 +74,7 @@ class EnglishModuleScreen extends StatelessWidget {
                               ),
                             ),
                             Icon(
-                              Icons.add,
+                              Icons.abc,
                               color: Colors.white,
                             ),
                           ],
@@ -102,7 +102,7 @@ class EnglishModuleScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Subtraction',
+                              'Correct The Word',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -110,7 +110,7 @@ class EnglishModuleScreen extends StatelessWidget {
                               ),
                             ),
                             Icon(
-                              Icons.remove,
+                              Icons.arrow_forward_ios,
                               color: Colors.white,
                             ),
                           ],

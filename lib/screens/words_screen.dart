@@ -49,7 +49,11 @@ class _WordJumbleGameState extends State<WordsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Word Jumble Game'),
+        iconTheme: IconThemeData(color: Colors.blue),
+        centerTitle: true,
+         backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Text('Word Jumble Game',style: TextStyle(color: Colors.blue)),
       ),
       body: SingleChildScrollView(
         child: Center(
